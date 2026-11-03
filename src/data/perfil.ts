@@ -163,10 +163,12 @@ export const herramientas: { grupo: Texto; items: { nombre: Texto | string; nive
       { nombre: 'MATLAB', nivel: 'profesional' },
       { nombre: { es: 'Excel (tablas dinámicas, BUSCARX, Power Query)', en: 'Excel (pivot tables, XLOOKUP, Power Query)' }, nivel: 'profesional' },
       { nombre: { es: 'SQL (JOINs, CTE, funciones de ventana)', en: 'SQL (JOINs, CTEs, window functions)' }, nivel: 'proyectos' },
+      { nombre: { es: 'Visualización (Matplotlib, Seaborn)', en: 'Visualization (Matplotlib, Seaborn)' }, nivel: 'profesional' },
+      { nombre: 'NumPy / SciPy', nivel: 'proyectos' },
       { nombre: 'SQLite / SQL Server / MySQL', nivel: 'proyectos' },
       { nombre: 'Jupyter / Google Colab', nivel: 'proyectos' },
       { nombre: 'Power BI', nivel: 'inicial' },
-      { nombre: 'Git', nivel: 'inicial' },
+      { nombre: 'MongoDB', nivel: 'inicial' },
     ],
   },
   {
@@ -174,8 +176,12 @@ export const herramientas: { grupo: Texto; items: { nombre: Texto | string; nive
     items: [
       { nombre: { es: 'TensorFlow / Keras (redes neuronales)', en: 'TensorFlow / Keras (neural networks)' }, nivel: 'profesional' },
       { nombre: 'scikit-learn', nivel: 'profesional' },
+      { nombre: 'PyTorch', nivel: 'proyectos' },
       { nombre: { es: 'Regresión, clasificación, MAE/MSE', en: 'Regression, classification, MAE/MSE' }, nivel: 'profesional' },
-      { nombre: 'Transfer learning', nivel: 'proyectos' },
+      { nombre: { es: 'Transfer learning y fine-tuning', en: 'Transfer learning and fine-tuning' }, nivel: 'proyectos' },
+      { nombre: 'Data augmentation', nivel: 'proyectos' },
+      { nombre: { es: 'Optuna (búsqueda de hiperparámetros)', en: 'Optuna (hyperparameter search)' }, nivel: 'proyectos' },
+      { nombre: { es: 'Validación cruzada sin fuga de datos', en: 'Leakage-free cross-validation' }, nivel: 'proyectos' },
       { nombre: { es: 'Dify (agentes de IA, RAG básico)', en: 'Dify (AI agents, basic RAG)' }, nivel: 'proyectos' },
       { nombre: 'n8n', nivel: 'inicial' },
     ],
@@ -199,6 +205,19 @@ export const herramientas: { grupo: Texto; items: { nombre: Texto | string; nive
       { nombre: 'Docker Compose', nivel: 'inicial' },
     ],
   },
+  {
+    grupo: { es: 'Desarrollo y trabajo en equipo', en: 'Development & teamwork' },
+    items: [
+      { nombre: { es: 'Word / PowerPoint (informes técnicos)', en: 'Word / PowerPoint (technical reports)' }, nivel: 'profesional' },
+      { nombre: 'Git / GitHub', nivel: 'proyectos' },
+      { nombre: { es: 'pytest (pruebas automáticas)', en: 'pytest (automated testing)' }, nivel: 'proyectos' },
+      { nombre: { es: 'APIs REST (requests)', en: 'REST APIs (requests)' }, nivel: 'proyectos' },
+      { nombre: 'GitHub Actions', nivel: 'proyectos' },
+      { nombre: 'Selenium', nivel: 'inicial' },
+      { nombre: 'Linux (Ubuntu)', nivel: 'inicial' },
+      { nombre: 'Jira / Notion', nivel: 'inicial' },
+    ],
+  },
 ]
 
 // ---------- Proyectos ----------
@@ -214,21 +233,24 @@ export const proyectos: {
 }[] = [
   {
     titulo: {
-      es: 'Tesis: transfer learning para estimar QoT en enlaces ópticos',
-      en: 'Thesis: transfer learning for QoT estimation in optical links',
+      es: 'Tesis: ganancia de amplificadores ópticos con transfer learning',
+      en: 'Thesis: optical amplifier gain prediction with transfer learning',
     },
     tipo: { es: 'Académico', en: 'Academic' },
     descripcion: {
-      es: 'Modelos de machine learning para estimar la calidad de transmisión en enlaces multitramo con EDFA. Transferí el aprendizaje desde el dataset público COSMOS (~202.000 muestras) a un dataset propio (~3.000 muestras).',
-      en: 'Machine learning models to estimate transmission quality in multi-span EDFA links. Transferred learning from the public COSMOS dataset (~202,000 samples) to my own dataset (~3,000 samples).',
+      es: 'Red neuronal en PyTorch preentrenada con 126.320 mediciones públicas (COSMOS) y especializada con transfer learning en dos fases para 4 EDFA medidos en laboratorio. Usé data augmentation y búsqueda de hiperparámetros con Optuna, y la evalué en un enlace real de 200 km con incertidumbre de potencia.',
+      en: 'PyTorch neural network pretrained on 126,320 public measurements (COSMOS) and fine-tuned with two-phase transfer learning for 4 lab-measured EDFAs. I used data augmentation and Optuna hyperparameter search, and evaluated it on a real 200 km link under power uncertainty.',
     },
     cifras: [
-      { es: 'Error acumulado: 8,69 → 2,4 dB', en: 'Accumulated error: 8.69 → 2.4 dB' },
-      { es: 'Incertidumbre: 9,39 → 5,11 dB', en: 'Uncertainty: 9.39 → 5.11 dB' },
-      { es: 'Modelos especialistas: 33 % a 55 % mejor', en: 'Specialist models: 33–55 % better' },
+      { es: 'Error de ganancia: 0,42 → 0,18 dB (−58 %)', en: 'Gain error: 0.42 → 0.18 dB (−58 %)' },
+      { es: 'Validación cruzada sin fuga de datos', en: 'Leakage-free cross-validation' },
+      { es: 'Enlace real: −33 % de error en el primer tramo', en: 'Real link: −33 % error on the first span' },
     ],
-    tecnologias: ['Python', 'Machine Learning', 'Transfer learning', 'EDFA', 'QoT'],
-    repo: '',
+    tecnologias: [
+      'Python', 'PyTorch', 'Transfer learning', 'Fine-tuning', 'Data augmentation', 'Optuna',
+      'Validación cruzada', 'pandas', 'NumPy', 'SciPy', 'Matplotlib', 'pytest', 'EDFA', 'QoT',
+    ],
+    repo: 'https://github.com/leomr-ict/edfa-transfer-learning',
   },
   {
     titulo: { es: 'JobMatch CL', en: 'JobMatch CL' },
