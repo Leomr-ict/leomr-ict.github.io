@@ -164,7 +164,7 @@ export const herramientas: { grupo: Texto; items: { nombre: Texto | string; nive
       { nombre: { es: 'Excel (tablas dinámicas, BUSCARX, Power Query)', en: 'Excel (pivot tables, XLOOKUP, Power Query)' }, nivel: 'profesional' },
       { nombre: { es: 'SQL (JOINs, CTE, funciones de ventana)', en: 'SQL (JOINs, CTEs, window functions)' }, nivel: 'proyectos' },
       { nombre: { es: 'Visualización (Matplotlib, Seaborn)', en: 'Visualization (Matplotlib, Seaborn)' }, nivel: 'profesional' },
-      { nombre: 'NumPy / SciPy', nivel: 'proyectos' },
+      { nombre: 'NumPy', nivel: 'proyectos' },
       { nombre: 'SQLite / SQL Server / MySQL', nivel: 'proyectos' },
       { nombre: 'Jupyter / Google Colab', nivel: 'proyectos' },
       { nombre: 'Power BI', nivel: 'inicial' },
@@ -215,7 +215,7 @@ export const herramientas: { grupo: Texto; items: { nombre: Texto | string; nive
       { nombre: 'GitHub Actions', nivel: 'proyectos' },
       { nombre: 'Selenium', nivel: 'inicial' },
       { nombre: 'Linux (Ubuntu)', nivel: 'inicial' },
-      { nombre: 'Jira / Notion', nivel: 'inicial' },
+      { nombre: 'Notion', nivel: 'inicial' },
     ],
   },
 ]
@@ -248,7 +248,7 @@ export const proyectos: {
     ],
     tecnologias: [
       'Python', 'PyTorch', 'Transfer learning', 'Fine-tuning', 'Data augmentation', 'Optuna',
-      'Validación cruzada', 'pandas', 'NumPy', 'SciPy', 'Matplotlib', 'pytest', 'EDFA', 'QoT',
+      'Validación cruzada', 'pandas', 'NumPy', 'Matplotlib', 'pytest', 'EDFA', 'QoT',
     ],
     repo: 'https://github.com/leomr-ict/edfa-transfer-learning',
   },
