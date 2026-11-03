@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+
+/* El modo oscuro se activa cuando <html> tiene la clase "dark". */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Color principal del sitio (azul petróleo).
+   Para cambiarlo, reemplaza estos 11 tonos y todo el sitio se actualiza. */
+@theme {
+  --color-marca-50: #eef8fa;
+  --color-marca-100: #d5edf2;
+  --color-marca-200: #aedbe5;
+  --color-marca-300: #7bc2d2;
+  --color-marca-400: #44a0b6;
+  --color-marca-500: #2a849c;
+  --color-marca-600: #1f6a80;
+  --color-marca-700: #1c5668;
+  --color-marca-800: #1b4857;
+  --color-marca-900: #1a3d4a;
+  --color-marca-950: #0c2731;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200;
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leonardo Muñoz Rosel | Analista de Datos</title>
+    <meta
+      name="description"
+      content="Portafolio de Leonardo Muñoz Rosel: Analista de Datos e Ingeniero en Telecomunicaciones. Experiencia, proyectos y publicaciones."
+    />
+    <!-- Aplica el tema guardado antes de mostrar la página (evita un parpadeo blanco) -->
+    <script>
+      try {
+        const tema = localStorage.getItem('tema')
+        const oscuro = tema ? tema === 'oscuro' : matchMedia('(prefers-color-scheme: dark)').matches
+        document.documentElement.classList.toggle('dark', oscuro)
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
